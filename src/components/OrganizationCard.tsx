@@ -81,6 +81,48 @@ const OrganizationCard = ({ organization, onClick }: OrganizationCardProps) => {
             <span>{organization.location}</span>
           </div>
 
+          {/* Контактная информация */}
+          <div className="space-y-2">
+            {organization.website && (
+              <div className="flex items-center gap-2 text-sm">
+                <Icon name="Globe" size={14} className="text-blue-600" />
+                <a
+                  href={organization.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 hover:underline"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {organization.website.replace("https://", "")}
+                </a>
+              </div>
+            )}
+            {organization.phone && (
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Icon name="Phone" size={14} className="text-green-600" />
+                <a
+                  href={`tel:${organization.phone}`}
+                  className="hover:text-foreground"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {organization.phone}
+                </a>
+              </div>
+            )}
+            {organization.email && (
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Icon name="Mail" size={14} className="text-purple-600" />
+                <a
+                  href={`mailto:${organization.email}`}
+                  className="hover:text-foreground"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {organization.email}
+                </a>
+              </div>
+            )}
+          </div>
+
           <div className="flex flex-wrap gap-1">
             {organization.focus.slice(0, 3).map((focus, index) => (
               <Badge key={index} variant="outline" className="text-xs">

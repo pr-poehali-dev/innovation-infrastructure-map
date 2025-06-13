@@ -6,6 +6,8 @@ export interface Organization {
   services: string[];
   location: string;
   website?: string;
+  phone?: string;
+  email?: string;
   established?: number;
   focus: string[];
   stage: string[];
