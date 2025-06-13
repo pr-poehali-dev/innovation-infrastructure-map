@@ -107,7 +107,7 @@ const Index = () => {
         <div className="text-center py-8 mt-12 border-t">
           <p className="text-muted-foreground">
             Образовательное учреждение высшего образования "Санкт-Петербургский
-            институт экономики и управления
+            институт экономики и управления"
           </p>
         </div>
       </div>
